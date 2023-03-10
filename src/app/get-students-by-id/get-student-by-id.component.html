@@ -1,0 +1,32 @@
+<h1>Student By CourseId</h1>
+<div class="form-group">
+  <select
+    class="select-option"
+    class="custom-select mb-6"
+    style="background-color: rgb(235, 194, 181)"
+    [(ngModel)]="service.courses.courseId"
+    (change)="getStudents()"
+  >
+    <option value="0">Choose Courses</option>
+    <option *ngFor="let item of service.course" [value]="item.courseId">
+      {{ item.studentId }} {{ item.title }}
+    </option>
+  </select>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>StudentId</th>
+      <th>CourseId</th>
+      <th>FirstName</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of service.student">
+        <td>{{ a.studentId }}</td>
+        <td>{{ a.courseId }}</td>
+        <td>{{ a.firstName }}</td>
+        <td (click)="delete(a.studentId, a.courseId)">
+          <span class="btn btn-danger">Delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

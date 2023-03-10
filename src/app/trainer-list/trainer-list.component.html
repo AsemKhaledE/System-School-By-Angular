@@ -1,0 +1,16 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <th>TrainerName</th>
+        <th>BirthDate</th>
+        <th>City</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of service.trainers">
+          <td>{{item.trainerName}}</td>
+          <td>{{item.birthdate}}</td>
+          <td>{{item.city}}</td>
+          <td (click)="delete(item.trainerId)"><span class="btn btn-danger">Delete</span></td>
+          <td (click)="fillData(item)"><span class="btn btn-primary">Update</span></td>
+      </tr>    
+    </tbody>
+    </table>

@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover">
+    <thead>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>StudentGender</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of service.students">
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.studentGender}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.email}}</td>
+          <td (click)="delete(item.studentId)"><span class="btn btn-danger">Delete</span></td>
+          <td (click)="fillData(item)"><span class="btn btn-primary">Update</span></td>
+      </tr>    
+    </tbody>
+    </table>

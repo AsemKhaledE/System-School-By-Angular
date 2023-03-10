@@ -1,0 +1,37 @@
+<form ngForm="form" (submit)="submit()">
+  <h1>Create StudentCourse</h1>
+
+  <div class="form-group">
+    <select
+      class="custom-select mb-6"
+      style="background-color: rgb(235, 194, 181)"
+      [(ngModel)]="service.craeteStudentCourse.studentId"
+      [ngModelOptions]="{ standalone: true }"
+    >
+      <option value="0">Choose Students</option>
+      <option *ngFor="let item of service.student" [value]="item.studentId">
+        {{ item.firstName }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <select
+      class="custom-select mb-6"
+      style="background-color: rgb(47, 151, 186)"
+      [ngModelOptions]="{ standalone: true }"
+      [(ngModel)]="service.craeteStudentCourse.courseId"
+    >
+      <option value="0">Choose Courses</option>
+      <option *ngFor="let item of service.course" [value]="item.courseId">
+        {{ item.title }}
+      </option>
+    </select>
+    <div class="form-group">
+      <input
+        type="submit"
+        value="Create Student Course"
+        class="btn btn-primary"
+      />
+    </div>
+  </div>
+</form>
